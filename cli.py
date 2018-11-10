@@ -3,7 +3,6 @@ from data import Mod
 from data import Game
 import filecmp
 import os, shutil
-import vext
 
 
 def read_path(filename) -> Path:
@@ -42,7 +41,7 @@ def repl():
     print("Enter a number to choose an option")
     print("1: define mlc01 directory")
     print("2: define mod directory")
-    print("3: scan games")
+    print("3: scan mods")
     print("4: quit")
 
     choice = input()
@@ -78,7 +77,7 @@ def scan_games(mlc_path, mods):
                 if subdir_cmp.common_files and mod not in game.mods:
                     game.mods.append(mod)
 
-        print(game.mods)
+        print("Game:", game.name + ",", "Mods:", game.mods)
 
     return games
 
